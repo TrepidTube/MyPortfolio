@@ -1,0 +1,300 @@
+.carousel-track {
+  width: 100%;
+  min-width: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  will-change: transform;
+  position: relative;
+  transition: transform 0.7s cubic-bezier(0.77,0,0.18,1);
+}
+
+.carousel-track.bounce {
+  animation: bounceTrack 0.45s cubic-bezier(0.77,0,0.18,1);
+}
+
+@keyframes bounceTrack {
+  0% { transform: translateX(0); }
+  30% { transform: translateX(-24px); }
+  60% { transform: translateX(24px); }
+  100% { transform: translateX(0); }
+}
+
+.carousel-card {
+  flex: 0 0 740px;
+  margin: 0 10px;
+  width: 740px;
+  max-width: 98vw;
+  min-height: 340px;
+  height: 100%;
+  aspect-ratio: 16/7;
+  transition: box-shadow 0.7s, filter 0.7s, opacity 0.7s, transform 0.7s cubic-bezier(0.77,0,0.18,1);
+  border-radius: 20px;
+  overflow: hidden;
+  background: #fff;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  position: relative;
+  cursor: pointer;
+  will-change: transform, opacity, left, right;
+  opacity: 1;
+}
+
+.carousel-card.enter-left {
+  animation: cardEnterLeft 0.7s cubic-bezier(0.77,0,0.18,1);
+}
+.carousel-card.enter-right {
+  animation: cardEnterRight 0.7s cubic-bezier(0.77,0,0.18,1);
+}
+.carousel-card.exit-left {
+  animation: cardExitLeft 0.7s cubic-bezier(0.77,0,0.18,1);
+}
+.carousel-card.exit-right {
+  animation: cardExitRight 0.7s cubic-bezier(0.77,0,0.18,1);
+}
+
+@keyframes cardEnterLeft {
+  from { opacity: 0; transform: translateX(-80px) scale(0.95); }
+  to { opacity: 1; transform: translateX(0) scale(1); }
+}
+@keyframes cardEnterRight {
+  from { opacity: 0; transform: translateX(80px) scale(0.95); }
+  to { opacity: 1; transform: translateX(0) scale(1); }
+}
+@keyframes cardExitLeft {
+  from { opacity: 1; transform: translateX(0) scale(1); }
+  to { opacity: 0; transform: translateX(-80px) scale(0.95); }
+}
+@keyframes cardExitRight {
+  from { opacity: 1; transform: translateX(0) scale(1); }
+  to { opacity: 0; transform: translateX(80px) scale(0.95); }
+}
+
+.carousel-center {
+  box-shadow: 0 16px 48px rgba(0,0,0,0.25), 0 2px 8px rgba(0,0,0,0.10);
+  transform: scale(1.08);
+  z-index: 2;
+  transition: transform 0.45s cubic-bezier(0.77,0,0.18,1);
+}
+
+.carousel-center:hover {
+  transform: scale(1.12);
+}
+
+.carousel-center img {
+  transition: transform 0.45s cubic-bezier(0.77,0,0.18,1);
+}
+
+.carousel-center:hover img {
+  transform: scale(1.10);
+}
+
+.carousel-side {
+  box-shadow: 0 2px 8px rgba(0,0,0,0.10);
+  filter: blur(2.5px) grayscale(0.2);
+  opacity: 0.32;
+  transform: scale(0.92);
+  z-index: 1;
+  pointer-events: none;
+  transition: opacity 0.7s, filter 0.7s, transform 0.7s cubic-bezier(0.77,0,0.18,1);
+}
+
+.carousel-card img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 20px;
+  display: block;
+}
+
+.carousel-card .card-body {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  min-height: 120px;
+}
+
+.carousel-card .card-text {
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  min-height: 3.6em;
+  max-height: 3.6em;
+}
+
+.project-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.78);
+  color: #fff;
+  opacity: 0;
+  pointer-events: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: opacity 0.45s cubic-bezier(0.77,0,0.18,1), transform 0.45s cubic-bezier(0.77,0,0.18,1);
+  border-radius: 20px;
+  z-index: 3;
+  transform: scale(0.8);
+}
+
+.carousel-center:hover .project-overlay,
+.carousel-center:focus .project-overlay {
+  opacity: 1;
+  pointer-events: auto;
+  transform: scale(1.1);
+}
+
+.overlay-content {
+  width: 100%;
+  padding: 2rem 1rem;
+  text-align: center;
+  animation: fadeIn 0.5s;
+}
+
+.overlay-content .card-title {
+  color: #fff;
+  font-size: 1.5rem;
+  margin-bottom: 1rem;
+}
+
+.overlay-content .card-text {
+  color: #e0e0e0;
+  margin-bottom: 1rem;
+}
+
+.overlay-content .badge {
+  background: rgba(255,255,255,0.18);
+  color: #fff;
+  margin: 0 0.25rem;
+}
+
+.overlay-content .btn {
+  margin: 0 0.5rem;
+}
+
+@media (max-width: 900px) {
+  .carousel-card {
+    width: 98vw;
+    aspect-ratio: 16/10;
+    min-height: 220px;
+  }
+}
+
+.carousel-center.slide-left,
+.carousel-side.slide-left {
+  animation: slideInLeft 0.5s cubic-bezier(0.4, 0.2, 0.2, 1);
+}
+
+.carousel-center.slide-right,
+.carousel-side.slide-right {
+  animation: slideInRight 0.5s cubic-bezier(0.4, 0.2, 0.2, 1);
+}
+
+@keyframes slideInLeft {
+  from {
+    opacity: 0.2;
+    transform: translateX(-60px) scale(0.95);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0) scale(1);
+  }
+}
+
+@keyframes slideInRight {
+  from {
+    opacity: 0.2;
+    transform: translateX(60px) scale(0.95);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0) scale(1);
+  }
+}
+
+.slide-animating.slide-left {
+  animation: slideOutLeft 0.45s forwards;
+}
+.slide-animating.slide-right {
+  animation: slideOutRight 0.45s forwards;
+}
+
+@keyframes slideOutLeft {
+  0% {
+    transform: translateX(0) scale(1);
+    opacity: 1;
+  }
+  100% {
+    transform: translateX(-100%) scale(0.95);
+    opacity: 0.2;
+  }
+}
+
+@keyframes slideOutRight {
+  0% {
+    transform: translateX(0) scale(1);
+    opacity: 1;
+  }
+  100% {
+    transform: translateX(100%) scale(0.95);
+    opacity: 0.2;
+  }
+}
+
+.col-12.d-flex.position-relative.overflow-hidden {
+  margin-left: 12px;
+  overflow: hidden !important;
+}
+
+.animate-overlay {
+  animation: overlayFadeIn 0.7s cubic-bezier(0.77,0,0.18,1);
+}
+
+@keyframes overlayFadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(30px) scale(0.98);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+.projects-card {
+  background: #212128;
+  border-radius: 18px;
+  box-shadow: 0 2px 16px rgba(44,62,80,0.10);
+  padding: 24px 18px;
+  max-width: 1400px;
+  margin: 0 auto 32px auto;
+  border: 1.5px solid #212128;
+}
+
+.w-100 {
+  /* width: 100% !important; */
+  width: 1400px;
+}
+
+.btn-light.position-absolute {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0 !important;
+}
+
+.btn-light.position-absolute img {
+  display: block;
+  margin: auto;
+}
+
+
+

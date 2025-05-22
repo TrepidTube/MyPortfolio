@@ -1,0 +1,53 @@
+.contact-card {
+    background: #212128;
+    border-radius: 18px;
+    box-shadow: 0 2px 16px rgba(44, 62, 80, 0.10);
+    padding: 24px 18px;
+    max-width: 1400px;
+    width: 1400px;
+    margin: 0 auto 32px auto;
+    border: 1.5px solid #212128;
+    color: #fff;
+}
+
+.contact-card label,
+.contact-card h2,
+.contact-card .form-label,
+.contact-card .form-control::placeholder {
+    color: #fff !important;
+}
+
+.contact-card .form-control {
+    background: #2e2e35;
+    color: #fff;
+    border: 1px solid #2e2e35;
+}
+
+.contact-card .form-control:focus {
+    background: #2e2e35
+    ;
+    color: #fff;
+    border-color: #007bff;
+    box-shadow: 0 0 0 0.2rem rgba(0,123,255,.15);
+}
+
+.toast-message {
+  position: fixed;
+  top: 32px;
+  left: 50%;
+  transform: translateX(-50%);
+  background: rgba(40, 167, 69, 0.95);
+  color: #fff;
+  padding: 1rem 2.5rem;
+  border-radius: 8px;
+  font-size: 1.1rem;
+  font-weight: 600;
+  z-index: 9999;
+  box-shadow: 0 2px 16px rgba(44,62,80,0.18);
+  animation: fadeInToast 0.5s;
+}
+
+@keyframes fadeInToast {
+  from { opacity: 0; transform: translateX(-50%) translateY(-20px); }
+  to { opacity: 1; transform: translateX(-50%) translateY(0); }
+}

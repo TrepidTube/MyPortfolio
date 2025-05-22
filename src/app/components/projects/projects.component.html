@@ -1,0 +1,61 @@
+<div class="container d-flex align-items-center justify-content-center">
+  <div class="projects-card">
+    <div class="row w-100">
+      <div class="col-12 text-center mb-5">
+        <h2 style="font-weight: bold; color: #fff;">Proyectos</h2>
+      </div>
+      <div class="col-12 d-flex justify-content-center align-items-center position-relative overflow-hidden" style="min-height: 450px;"
+           (mouseenter)="pauseAutoplay()" (mouseleave)="restartAutoplay()"
+           (touchstart)="onTouchStart($event)" (touchend)="onTouchEnd($event)"
+           role="region" aria-label="Carrusel de proyectos">
+        <div class="carousel-track d-flex align-items-center" tabindex="0" aria-live="polite">
+          <div class="carousel-card carousel-side" style="z-index: 1;">
+            <img [src]="projects[prevIndex].image" [alt]="projects[prevIndex].title" loading="lazy">
+          </div>
+          <div class="carousel-card carousel-center" style="z-index: 2; overflow: visible;">
+            <img [src]="projects[current].image" [alt]="projects[current].title" loading="lazy">
+            <div class="project-overlay">
+              <div class="overlay-content text-center animate-overlay">
+                <h5 class="card-title">{{ projects[current].title }}</h5>
+                <p class="card-text">{{ projects[current].description }}</p>
+                <div class="mb-2">
+                  <span *ngFor="let tech of projects[current].tech" class="badge bg-primary mx-1">{{ tech }}</span>
+                </div>
+                <div class="d-flex justify-content-center gap-2 mt-3">
+                  <a *ngIf="projects[current].demo" [href]="projects[current].demo" class="btn btn-outline-primary" target="_blank">Ver Demo</a>
+                  <a *ngIf="projects[current].code" [href]="projects[current].code" class="btn btn-outline-secondary" target="_blank">Código</a>
+                  <ng-container *ngIf="projects[current].codePantalla && projects[current].codeController">
+                    <a [href]="projects[current].codePantalla" class="btn btn-outline-secondary" target="_blank">Código Pantalla</a>
+                    <a [href]="projects[current].codeController" class="btn btn-outline-secondary" target="_blank">Código Controlador</a>
+                  </ng-container>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="carousel-card carousel-side" style="z-index: 1;">
+            <img [src]="projects[nextIndex].image" [alt]="projects[nextIndex].title" loading="lazy">
+          </div>
+        </div>
+        <!-- Controles -->
+        <button (click)="prev()" class="btn btn-light position-absolute top-50 start-0 translate-middle-y d-flex align-items-center justify-content-center" style="z-index: 3; border-radius: 50%; width: 48px; height: 48px; box-shadow: 0 2px 8px rgba(0,0,0,0.1); padding: 0;" aria-label="Proyecto anterior">
+          <img src="https://img.icons8.com/?size=100&id=39800&format=png&color=000000" alt="Flecha izquierda" style="width: 28px; height: 28px; display: block; margin: auto;"/>
+        </button>
+        <button (click)="next()" class="btn btn-light position-absolute top-50 end-0 translate-middle-y d-flex align-items-center justify-content-center" style="z-index: 3; border-radius: 50%; width: 48px; height: 48px; box-shadow: 0 2px 8px rgba(0,0,0,0.1); padding: 0;" aria-label="Proyecto siguiente">
+          <img src="https://img.icons8.com/?size=100&id=60&format=png&color=000000" alt="Flecha derecha" style="width: 28px; height: 28px; display: block; margin: auto;"/>
+        </button>
+      </div>
+      <!-- Indicadores -->
+      <div class="col-12 d-flex justify-content-center mt-4">
+        <div *ngFor="let p of projects; let i = index"
+             [ngClass]="{'bg-primary': i === current, 'bg-secondary': i !== current}"
+             style="width: 12px; height: 12px; border-radius: 50%; margin: 0 4px; opacity: 0.5; transition: all 0.3s; cursor: pointer;"
+             [style.opacity]="i === current ? '1' : '0.3'"
+             (click)="goTo(i)"
+             [attr.title]="projects[i].title"
+             role="button"
+             [attr.aria-label]="'Ir al proyecto ' + projects[i].title"
+             tabindex="0"></div>
+      </div>
+    </div>
+  </div>
+</div>

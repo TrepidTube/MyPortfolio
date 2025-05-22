@@ -1,0 +1,250 @@
+body, .container {
+  background: #212128 !important;
+}
+
+.skill-circle svg {
+  display: block;
+  margin: 0 auto;
+}
+
+.skill-circle text {
+  dominant-baseline: middle;
+  fill: #fff;
+}
+
+.skill-circle {
+  min-width: 140px;
+  min-height: 140px;
+  position: relative;
+}
+
+@media (max-width: 900px) {
+  .skill-circle {
+    min-width: 110px;
+    min-height: 110px;
+  }
+}
+
+.row.w-100.align-items-center {
+  min-height: 350px;
+}
+
+.experience-bg {
+  background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+  border-radius: 24px;
+  box-shadow: 0 4px 24px rgba(44,62,80,0.08);
+  padding: 16px;
+  max-width: 1400px;
+  width: 100%;
+  margin: 0 auto;
+}
+
+.section-block {
+  margin-bottom: 25px !important;
+}
+
+.section-card {
+  background: #2e2e35;
+  border-radius: 18px;
+  box-shadow: 0 2px 16px rgba(44,62,80,0.10);
+  padding: 0;
+  margin-bottom: 25px;
+  display: flex;
+  flex-direction: row;
+  align-items: stretch;
+  border: 1.5px solid #2e2e35;
+  min-height: 140px;
+  width: 100%;
+  max-width: 1200px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.section-icon-box {
+  min-width: 120px;
+  max-width: 180px;
+  width: 180px;
+  padding: 1.2rem 0.5rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  border-radius: 18px 0 0 18px;
+  text-align: center;
+}
+
+.app-bg {
+  background: #6c63ff;
+}
+.web-bg {
+  background: #43c59e;
+}
+.db-bg {
+  background: #ffb366;
+}
+
+.section-icon {
+  width: 38px;
+  margin-bottom: 10px;
+}
+
+.section-title {
+  color: #fff;
+  font-weight: 600;
+  text-align: center;
+  letter-spacing: 0.5px;
+  width: 100%;
+  display: block;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  font-size: 1.05rem;
+  margin-top: 0.2rem;
+}
+
+.section-skills {
+  flex: 1;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-evenly;
+  padding: .5rem 0;
+  background: transparent;
+  min-height: 90px;
+  width: 100%;
+}
+
+.skill-circle {
+  min-width: 70px;
+  min-height: 70px;
+  margin: 0 12px;
+}
+
+.skill-label {
+  font-size: 1em;
+  font-weight: 600;
+  color: #fff !important;
+  letter-spacing: 1px;
+  margin-top: 0.2rem;
+}
+
+@media (max-width: 900px) {
+  .experience-bg {
+    max-width: 98vw;
+    padding: 0.5rem 0.2rem;
+  }
+  .section-card {
+    flex-direction: column;
+    align-items: center;
+    max-width: 98vw;
+  }
+  .section-icon-box {
+    border-radius: 18px 18px 0 0;
+    min-width: 100%;
+    max-width: 100%;
+    width: 100%;
+    padding: 1rem 0.5rem;
+  }
+  .section-skills {
+    flex-direction: column;
+    padding: 0.5rem 0;
+  }
+  .skill-circle {
+    margin: 10px 0;
+  }
+}
+
+.mb-4 {
+  margin-bottom: 16px !important;
+}
+
+.contact-card {
+  background: #fff;
+  border-radius: 18px;
+  box-shadow: 0 2px 16px rgba(44,62,80,0.10);
+  padding: 24px 18px;
+  max-width: 1100px;
+  margin: 0 auto 32px auto;
+  border: 1.5px solid #f2f2f2;
+}
+
+.icon-progress {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 110px;
+  height: 110px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  pointer-events: none;
+}
+.icon-bg, .icon-fg {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  width: 48px;
+  height: 48px;
+  transform: translate(-50%, -50%);
+  z-index: 1;
+}
+.icon-fill {
+  position: absolute;
+  left: 50%;
+  bottom: 50%;
+  width: 48px;
+  height: 0%;
+  overflow: hidden;
+  transform: translateX(-50%) translateY(50%);
+  z-index: 2;
+  transition: height 0.45s cubic-bezier(0.77,0,0.18,1);
+  display: flex;
+  align-items: flex-end;
+}
+.percent-text {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 1.3em;
+  font-weight: bold;
+  color: #23234f;
+  z-index: 3;
+  pointer-events: none;
+}
+
+.icon-java {
+  width: 60px !important;
+  height: 60px !important;
+}
+
+.skill-circle .percent-text {
+  opacity: 0;
+  transition: opacity 0.3s;
+  background: rgba(0,0,0,0.55);
+  width: 87px;
+  height: 87px;
+  border-radius: 50%;
+  color: #fff;
+  z-index: 4;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.3em;
+  font-weight: bold;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  pointer-events: none;
+}
+.skill-circle:hover .percent-text {
+  opacity: 1;
+}
+.skill-circle .icon-bg {
+  filter: none;
+  transition: filter 0.3s;
+}
+.skill-circle:hover .icon-bg {
+  filter: blur(2.5px) brightness(0.7);
+}
