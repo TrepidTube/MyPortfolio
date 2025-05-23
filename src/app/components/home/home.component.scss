@@ -10,6 +10,12 @@
   border-top-right-radius: 300px;
   backdrop-filter: blur(16px);
   -webkit-backdrop-filter: blur(16px);
+  transition: min-height 0.7s cubic-bezier(0.4, 0, 0.2, 1), height 0.7s cubic-bezier(0.4, 0, 0.2, 1);
+  min-height: 446px;
+}
+
+.img-fluid.rounded-circle {
+  height: 445px;
 }
 
 .display-4 {
@@ -19,7 +25,208 @@
 .text-muted {
  color: #8a8a8a !important;
 }
+.date-home {
+  text-align: right;
+}
 
-.lead {
+.lead, .info-home {
     color: #7c7c7c;
+}
+.info-home {
+  width: 450px;
+}
+
+.home-card-expandida {
+  min-height: 512px;
+  transition: min-height 0.7s cubic-bezier(0.4, 0, 0.2, 1), border-bottom-right-radius 0.7s cubic-bezier(0.4, 0, 0.2, 1), border-top-right-radius 0.7s cubic-bezier(0.4, 0, 0.2, 1);
+  border-bottom-right-radius: 18px;
+}
+
+.acordeon-home {
+  width: 100%;
+  position: relative;
+}
+
+.btn-flecha-acordeon {
+  width: 100%;
+  height: 64px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 2.5rem;
+  background: #23233a;
+  border: none;
+  border-radius: 12px;
+  margin: 0;
+  transition: box-shadow 0.7s cubic-bezier(0.4, 0, 0.2, 1);
+  box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+  cursor: pointer;
+  opacity: 1;
+  transform: translateY(0);
+  position: relative;
+  z-index: 2;
+}
+
+.btn-flecha-acordeon.flecha-fade-abajo {
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 0;
+  z-index: 3;
+}
+
+.acordeon-contenido {
+  overflow: hidden;
+  max-height: 0;
+  opacity: 0;
+  transform: translateY(-32px);
+  transition: 
+    max-height 0.7s cubic-bezier(0.4, 0, 0.2, 1),
+    opacity 0.7s 0.1s cubic-bezier(0.4, 0, 0.2, 1),
+    transform 0.7s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.acordeon-contenido.abierto {
+  max-height: 400px;
+  opacity: 1;
+  transform: translateY(0);
+  transition: 
+    max-height 0.7s cubic-bezier(0.4, 0, 0.2, 1),
+    opacity 0.7s 0.1s cubic-bezier(0.4, 0, 0.2, 1),
+    transform 0.7s cubic-bezier(0.4, 0, 0.2, 1);
+    
+}
+
+.contenido-extra {
+  padding: 1.5rem 1rem 0.5rem 1rem;
+  background: rgba(255, 255, 255, 0.2);
+  color: #fff;
+  border-radius: 12px 12px 0 0;
+  animation: barrido 0.7s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+@keyframes barrido {
+  from {
+    clip-path: inset(0 100% 0 0);
+    opacity: 0;
+  }
+  to {
+    clip-path: inset(0 0 0 0);
+    opacity: 1;
+  }
+}
+
+.contenido-extra-mejorado {
+  padding: 1.5rem 1rem 0.5rem 1rem;
+  background: #23233a;
+  color: #fff;
+  border-radius: 0 0 12px 12px;
+  animation-fill-mode: both;
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  margin-top: 35px;
+}
+
+.abriendo-barrido {
+  animation: barrido-abajo 0.7s cubic-bezier(0.4, 0, 0.2, 1);
+}
+.cerrando-barrido {
+  animation: barrido-arriba 0.7s cubic-bezier(0.4, 0, 0.2, 1) forwards !important;
+}
+
+@keyframes barrido-abajo {
+  from {
+    clip-path: inset(0 0 100% 0);
+    opacity: 0;
+    transform: translateY(24px);
+  }
+  to {
+    clip-path: inset(0 0 0 0);
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/*
+.img-fluid.rounded-circle {
+  width: 445px !important;
+  height: 445px !important;
+  max-width: 445px !important;
+}
+*/
+
+@keyframes barrido-arriba {
+  from {
+    clip-path: inset(0 0 0 0);
+    opacity: 1;
+    transform: translateY(0);
+  }
+  to {
+    clip-path: inset(0 0 100% 0);
+    opacity: 0;
+    transform: translateY(24px);
+  }
+}
+
+.flecha-abajo {
+  transition: transform 0.7s cubic-bezier(0.4, 0, 0.2, 1);
+}
+.cerrando-barrido .flecha-abajo {
+  transform: translateY(-32px);
+  opacity: 0;
+  transition: transform 0.7s cubic-bezier(0.4, 0, 0.2, 1), opacity 0.7s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.flecha-fade-abajo {
+  animation: fadeDown 0.7s cubic-bezier(0.4, 0, 0.2, 1) forwards;
+}
+
+@keyframes fadeDown {
+  from {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  to {
+    opacity: 0;
+    transform: translateY(32px);
+  }
+}
+
+.flecha-fade-arriba {
+  animation: fadeUp 0.7s cubic-bezier(0.4, 0, 0.2, 1) backwards;
+  position: relative;
+  z-index: 3;
+}
+
+@keyframes fadeUp {
+  from {
+    opacity: 0;
+    transform: translateY(-32px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.flecha-fade-in {
+  animation: fadeInUp 0.7s cubic-bezier(0.4, 0, 0.2, 1) backwards;
+  position: relative;
+  z-index: 3;
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(32px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.home-card-reduciendo {
+  min-height: 446px !important;
 }

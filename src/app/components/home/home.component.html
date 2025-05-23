@@ -1,13 +1,52 @@
 <div class="container d-flex align-items-center justify-content-center">
-  <div class="home-card">
+  <div class="home-card" [class.home-card-expandida]="mostrarExtra" [class.home-card-reduciendo]="cerrando">
     <div class="row align-items-center">
       <div class="col-md-6 text-center text-md-start">
         <h1 class="display-4">David Navarrete</h1>
         <h2 class="text-muted">Desarrollador Jr.</h2>
         <p class="lead">Apasionado por el detalle y la funcionalidad</p>
+        <p class="info-home">Soy estudiante de Ingeniería en Tecnología de Software, con una fuerte pasión por el desarrollo de aplicaciones y un interés creciente en el diseño. Me motiva aprender constantemente, por lo que disfruto explorar nuevas tecnologías y ampliar mis habilidades. <br> Actualmente me encuentro en búsqueda de una oportunidad para realizar mis prácticas profesionales</p>
+        
         <div class="mt-4">
           <a href="#contacto" class="btn btn-primary me-2">Contacto</a>
           <a href="#proyectos" class="btn btn-outline-primary">Proyectos</a>
+          <p class="date-home">- 05/2025</p>
+        </div>
+        <div class="acordeon-home">
+          <!--
+          <button 
+            *ngIf="!mostrarExtra || cerrando"
+            class="btn-flecha-acordeon"
+            (click)="toggleExtra()"
+            [attr.aria-expanded]="mostrarExtra"
+            [ngClass]="{'flecha-fade-abajo': fadeBtn, 'flecha-fade-in': cerrando}">
+            <svg class="flecha-svg" width="100%" height="32" viewBox="0 0 200 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <polyline points="20,10 100,28 180,10" stroke="currentColor" stroke-width="6" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+          </button>
+          -->
+          <div 
+            *ngIf="mostrarExtra || cerrando"
+            #acordeonContenido
+            class="acordeon-contenido-mejorado"
+            [style.maxHeight]="mostrarExtra || cerrando ? acordeonContenido.scrollHeight + 'px' : '0px'"
+            [class.abierto]="mostrarExtra">
+            <div class="contenido-extra-mejorado" [ngClass]="{'cerrando-barrido': cerrando, 'abriendo-barrido': mostrarExtra && !cerrando}">
+              <div class="contenido-extra-texto">
+                Esta es la información adicional de la sección Home. Puedes poner aquí lo que desees: descripción, logros, enlaces, etc.
+              </div>
+              <div class="contenedor-flecha-boton">
+                <button 
+                  class="btn-flecha-acordeon flecha-abajo"
+                  (click)="toggleExtra()"
+                  [ngClass]="{'flecha-fade-arriba': fadeBtn && mostrarExtra}">
+                  <svg class="flecha-svg" width="100%" height="32" viewBox="0 0 200 32" fill="none" xmlns="http://www.w3.org/2000/svg" style="transform: rotate(180deg);">
+                    <polyline points="20,10 100,28 180,10" stroke="currentColor" stroke-width="6" stroke-linecap="round" stroke-linejoin="round"/>
+                  </svg>
+                </button>
+              </div>
+            </div>
+          </div>
         </div>
       </div>
       <div class="col-md-6 text-center">

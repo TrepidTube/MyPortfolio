@@ -4,7 +4,6 @@ import { HomeComponent } from './components/home/home.component';
 import { ExperienceComponent } from './components/experience/experience.component';
 import { ProjectsComponent } from './components/projects/projects.component';
 import { ContactComponent } from './components/contact/contact.component';
-import { MatrixBackgroundComponent } from './components/matrix-background/matrix-background.component';
 import { NodesBackgroundComponent } from './components/nodes-background/nodes-background.component';
 
 @Component({
@@ -23,13 +22,15 @@ import { NodesBackgroundComponent } from './components/nodes-background/nodes-ba
 })
 export class AppComponent implements OnInit {
   title = 'portfolio';
+  mostrarAviso = false;
 
   ngOnInit() {
     // Configurar la navegación suave
     document.querySelectorAll('a[href^="#"]').forEach(anchor => {
       anchor.addEventListener('click', (e: Event) => {
         e.preventDefault();
-        const href = (e.target as HTMLAnchorElement).getAttribute('href');
+        const anchorElement = (e.target as HTMLElement).closest('a');
+        const href = anchorElement ? anchorElement.getAttribute('href') : null;
         if (href) {
           const target = document.querySelector(href);
           if (target) {
@@ -55,5 +56,13 @@ export class AppComponent implements OnInit {
         });
       });
     }
+
+    this.verificarAncho();
+    window.addEventListener('resize', this.verificarAncho.bind(this));
+  }
+
+  verificarAncho() {
+    this.mostrarAviso = window.innerWidth < 910;
+    document.body.style.overflow = this.mostrarAviso ? 'hidden' : '';
   }
 }

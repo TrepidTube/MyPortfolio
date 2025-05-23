@@ -5,10 +5,10 @@
   <div class="section-card mb-4 d-flex flex-row align-items-stretch">
     <div class="section-icon-box app-bg d-flex flex-column align-items-center justify-content-center">
       <img src="https://img.icons8.com/ios-filled/100/ffffff/smartphone-tablet.png" alt="App Development" class="section-icon">
-      <span class="section-title">App Development</span>
+      <span class="section-title">Desarrollo de aplicaciones</span>
     </div>
     <div class="section-skills d-flex flex-row align-items-center justify-content-center flex-grow-1">
-      <div *ngFor="let skill of appSkills; let i = index" class="skill-circle text-center mx-4">
+      <div *ngFor="let skill of appSkills; let i = index" class="skill-circle text-center">
         <svg width="110" height="110">
           <circle cx="55" cy="55" r="48" stroke="#e0e0e0" stroke-width="10" fill="none" />
           <circle cx="55" cy="55" r="48" [attr.stroke]="skill.color" stroke-width="10" fill="none"
@@ -31,10 +31,10 @@
   <div class="section-card mb-4 d-flex flex-row align-items-stretch">
     <div class="section-icon-box web-bg d-flex flex-column align-items-center justify-content-center">
       <img src="https://img.icons8.com/ios-filled/100/ffffff/internet--v1.png" alt="Web Development" class="section-icon">
-      <span class="section-title">Web Development</span>
+      <span class="section-title">Desarrollo web</span>
     </div>
     <div class="section-skills d-flex flex-row align-items-center justify-content-center flex-grow-1">
-      <div *ngFor="let skill of webSkills; let i = index" class="skill-circle text-center mx-4">
+      <div *ngFor="let skill of webSkills; let i = index" class="skill-circle text-center">
         <svg width="110" height="110">
           <circle cx="55" cy="55" r="48" stroke="#e0e0e0" stroke-width="10" fill="none" />
           <circle cx="55" cy="55" r="48" [attr.stroke]="skill.color" stroke-width="10" fill="none"
@@ -61,7 +61,7 @@
       <span class="section-title">Database</span>
     </div>
     <div class="section-skills d-flex flex-row align-items-center justify-content-center flex-grow-1">
-      <div *ngFor="let skill of skills; let i = index" class="skill-circle text-center mx-4">
+      <div *ngFor="let skill of skills; let i = index" class="skill-circle text-center">
         <svg width="110" height="110">
           <circle cx="55" cy="55" r="48" stroke="#e0e0e0" stroke-width="10" fill="none" />
           <circle cx="55" cy="55" r="48" [attr.stroke]="skill.color" stroke-width="10" fill="none"

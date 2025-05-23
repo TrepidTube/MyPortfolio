@@ -3,8 +3,8 @@
     border-radius: 18px;
     box-shadow: 0 2px 16px rgba(44, 62, 80, 0.10);
     padding: 24px 18px;
-    max-width: 1400px;
-    width: 1400px;
+    max-width: 1400px !important;
+    width: 100% !important;
     margin: 0 auto 32px auto;
     border: 1.5px solid #212128;
     color: #fff;
@@ -50,4 +50,19 @@
 @keyframes fadeInToast {
   from { opacity: 0; transform: translateX(-50%) translateY(-20px); }
   to { opacity: 1; transform: translateX(-50%) translateY(0); }
+}
+
+@media (max-width: 900px) {
+  .contact-card {
+    max-width: 98vw;
+    padding: 16px 6px;
+    border-radius: 14px;
+  }
+}
+@media (max-width: 600px) {
+  .contact-card {
+    max-width: 99vw;
+    padding: 8px 2px;
+    border-radius: 10px;
+  }
 }

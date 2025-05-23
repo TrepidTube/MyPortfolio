@@ -23,8 +23,8 @@
 .carousel-card {
   flex: 0 0 740px;
   margin: 0 10px;
-  width: 740px;
-  max-width: 98vw;
+  width: 100%;
+  max-width: 1400px;
   min-height: 340px;
   height: 100%;
   aspect-ratio: 16/7;
@@ -180,14 +180,6 @@
   margin: 0 0.5rem;
 }
 
-@media (max-width: 900px) {
-  .carousel-card {
-    width: 98vw;
-    aspect-ratio: 16/10;
-    min-height: 220px;
-  }
-}
-
 .carousel-center.slide-left,
 .carousel-side.slide-left {
   animation: slideInLeft 0.5s cubic-bezier(0.4, 0.2, 0.2, 1);
@@ -274,14 +266,17 @@
   border-radius: 18px;
   box-shadow: 0 2px 16px rgba(44,62,80,0.10);
   padding: 24px 18px;
+  width: 100%;
   max-width: 1400px;
   margin: 0 auto 32px auto;
   border: 1.5px solid #212128;
 }
 
-.w-100 {
-  /* width: 100% !important; */
+@media (min-width: 1400px) {
+  .projects-card {
   width: 1400px;
+    max-width: 1400px;
+  }
 }
 
 .btn-light.position-absolute {
@@ -295,6 +290,4 @@
   display: block;
   margin: auto;
 }
-
-
 

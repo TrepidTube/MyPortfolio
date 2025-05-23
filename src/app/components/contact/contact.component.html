@@ -18,10 +18,10 @@
             <button type="submit" class="btn btn-primary">Enviar</button>
           </div>
         </form>
+        <div *ngIf="showToast" class="toast-message">
+          {{ toastMessage }}
+        </div>
       </div>
-    </div>
-    <div *ngIf="showToast" class="toast-message">
-      {{ toastMessage }}
     </div>
   </div>
 </div>
