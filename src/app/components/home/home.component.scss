@@ -16,6 +16,13 @@
 
 .img-fluid.rounded-circle {
   height: 445px;
+  width: auto;
+  max-width: 100%;
+  min-width: unset;
+  object-fit: cover;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 .display-4 {
@@ -229,4 +236,145 @@
 
 .home-card-reduciendo {
   min-height: 446px !important;
+}
+
+@media (max-width: 900px) {
+  .home-card {
+    max-width: 98vw;
+    min-height: 340px;
+    height: auto;
+    padding: 0 0 0 10px;
+    border-bottom-right-radius: 80px;
+    border-top-right-radius: 80px;
+  }
+  .info-home {
+    width: 98vw;
+    font-size: 1rem;
+  }
+  .img-fluid.rounded-circle {
+    height: 220px;
+    max-width: 90vw;
+  }
+}
+@media (max-width: 600px) {
+  .home-card {
+    max-width: 99vw;
+    min-height: 70vh;
+    padding: 0 0 0 4px;
+    border-bottom-right-radius: 30px;
+    border-top-right-radius: 30px;
+  }
+  .info-home {
+    width: 95vw;
+    font-size: 0.95rem;
+  }
+  .img-fluid.rounded-circle {
+    height: 120px;
+    max-width: 80vw;
+  }
+  .display-4 {
+    font-size: 1.5rem;
+  }
+}
+@media (max-width: 400px) {
+  .home-card {
+    max-width: 100vw;
+    min-height: 60vh;
+    padding: 0 0 0 2px;
+    border-bottom-right-radius: 10px;
+    border-top-right-radius: 10px;
+  }
+  .info-home {
+    width: 98vw;
+    font-size: 0.85rem;
+  }
+  .img-fluid.rounded-circle {
+    height: 80px;
+    max-width: 70vw;
+  }
+  .display-4 {
+    font-size: 1.1rem;
+  }
+}
+
+@media (max-width: 960px) {
+  .img-fluid.rounded-circle {
+    width: 100%;
+    height: 100%;
+    min-width: 120px;
+    margin-bottom: 1.5rem;
+    margin-top: 1rem;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  .home-card {
+    min-height: 80vh;
+    height: auto;
+    border-bottom-right-radius: 18px;
+    border-top-left-radius: 300px;
+    padding-top: 2rem;
+    padding-bottom: 2rem;
+    margin-top: 0;
+    margin-bottom: 0;
+  }
+  .home-card .row.align-items-center {
+    flex-direction: column !important;
+    align-items: center !important;
+  }
+  .home-card .col-md-6.text-center {
+    order: 1;
+  }
+  .home-card .col-md-6.text-center.text-md-start {
+    order: 2;
+    max-width: 600px;
+    width: 100%;
+    margin-left: auto;
+    margin-right: auto;
+    padding-left: 1.5rem;
+    padding-right: 1.5rem;
+    text-align: left !important;
+  }
+  .home-card .col-md-6.text-center.text-md-start .display-4,
+  .home-card .col-md-6.text-center.text-md-start .text-muted {
+    text-align: center !important;
+    width: 100%;
+    display: block;
+  }
+}
+
+// Botones sociales en home-card (dentro de la tarjeta)
+.home-card .floating-contact-btn {
+  width: 48px;
+  height: 48px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.2rem;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.15);
+  border-radius: 50%;
+  padding: 0;
+  margin-left: 0.2rem;
+  margin-right: 0.2rem;
+  transition: background 0.2s, color 0.2s, transform 0.2s;
+  border: none !important;
+  outline: none !important;
+}
+.home-card .floating-contact-btn:focus {
+  outline: none !important;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.15);
+}
+.home-card .floating-contact-btn.linkedin {
+  background: #0077b5;
+  color: #fff;
+}
+.home-card .floating-contact-btn.linkedin:hover {
+  background: #005983;
+}
+.home-card .floating-contact-btn.github {
+  background: #24292f;
+  color: #fff;
+}
+.home-card .floating-contact-btn.github:hover {
+  background: #333;
 }

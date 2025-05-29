@@ -55,14 +55,21 @@
 @media (max-width: 900px) {
   .contact-card {
     max-width: 98vw;
-    padding: 16px 6px;
+    padding: 10px 2px;
     border-radius: 14px;
   }
 }
 @media (max-width: 600px) {
   .contact-card {
     max-width: 99vw;
-    padding: 8px 2px;
+    padding: 4px 1px;
     border-radius: 10px;
+  }
+}
+@media (max-width: 400px) {
+  .contact-card {
+    max-width: 100vw;
+    padding: 2px 0;
+    border-radius: 6px;
   }
 }
