@@ -52,6 +52,14 @@ export class NodesBackgroundComponent implements OnInit, AfterViewInit, OnDestro
     const canvas = this.canvasRef.nativeElement;
     this.width = window.innerWidth;
     this.height = window.innerHeight;
+    // Ajustar el número de nodos según el ancho de pantalla
+    if (this.width <= 400) {
+      this.nodeCount = 12;
+    } else if (this.width <= 600) {
+      this.nodeCount = 18;
+    } else {
+      this.nodeCount = 32;
+    }
     canvas.width = this.width;
     canvas.height = this.height;
     this.ctx = canvas.getContext('2d')!;
