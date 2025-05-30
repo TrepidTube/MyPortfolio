@@ -213,3 +213,27 @@
     width: 100%;
   }
 }
+
+@media (max-width: 960px) {
+  .floating-contact-group {
+    bottom: 10px !important;
+    right: 10px !important;
+  }
+}
+@media (max-width: 600px) {
+  .floating-contact-group {
+    bottom: 6px !important;
+    right: 6px !important;
+  }
+}
+@media (max-width: 400px) {
+  .floating-contact-group {
+    bottom: 2px !important;
+    right: 2px !important;
+  }
+  .floating-contact-btn {
+    width: 55px;
+    height: 55px;
+    font-size: 1.1rem;
+  }
+}

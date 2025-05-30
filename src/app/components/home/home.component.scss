@@ -44,7 +44,7 @@
 }
 
 .home-card-expandida {
-  min-height: 512px;
+  /* min-height: 512px; */
   transition: min-height 0.7s cubic-bezier(0.4, 0, 0.2, 1), border-bottom-right-radius 0.7s cubic-bezier(0.4, 0, 0.2, 1), border-top-right-radius 0.7s cubic-bezier(0.4, 0, 0.2, 1);
   border-bottom-right-radius: 18px;
 }
@@ -238,70 +238,111 @@
   min-height: 446px !important;
 }
 
-@media (max-width: 900px) {
-  .home-card {
-    max-width: 98vw;
-    min-height: 340px;
-    height: auto;
-    padding: 0 0 0 10px;
-    border-bottom-right-radius: 80px;
-    border-top-right-radius: 80px;
-  }
-  .info-home {
-    width: 98vw;
-    font-size: 1rem;
-  }
-  .img-fluid.rounded-circle {
-    height: 220px;
-    max-width: 90vw;
-  }
-}
 @media (max-width: 600px) {
+   .img-fluid.rounded-circle {
+    width: 180px;
+    height: 180px;
+    min-width: 100px;
+    max-width: 220px;
+    margin-bottom: 1rem;
+    margin-top: 1rem;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+  }
   .home-card {
-    max-width: 99vw;
-    min-height: 70vh;
-    padding: 0 0 0 4px;
-    border-bottom-right-radius: 30px;
-    border-top-right-radius: 30px;
+    width: 100%;
+    min-height: 24vh;
+    border-bottom-right-radius: 6px;
+    border-top-left-radius: 32px;
+    padding-top: 0.2rem;
+    padding-bottom: 0.2rem;
+    margin-top: 0;
+    margin-bottom: 0;
+  }
+  .home-card .row.align-items-center {
+    flex-direction: column !important;
+    align-items: center !important;
+  }
+  .home-card .col-md-6.text-center {
+    order: 1;
+  }
+  .home-card .col-md-6.text-center.text-md-start {
+    order: 2;
+    max-width: 600px;
+    width: 100%;
+    margin-left: auto;
+    margin-right: auto;
+    padding-left: 1.5rem;
+    padding-right: 1.5rem;
+    text-align: left !important;
+  }
+  .home-card .col-md-6.text-center.text-md-start .display-4,
+  .home-card .col-md-6.text-center.text-md-start .text-muted {
+    text-align: center !important;
+    width: 100%;
+    display: block;
   }
   .info-home {
-    width: 95vw;
-    font-size: 0.95rem;
-  }
-  .img-fluid.rounded-circle {
-    height: 120px;
-    max-width: 80vw;
-  }
-  .display-4 {
-    font-size: 1.5rem;
+    width: 100% !important;
   }
 }
 @media (max-width: 400px) {
+  .img-fluid.rounded-circle {
+    width: 120px;
+    height: 120px;
+    min-width: 80px;
+    max-width: 140px;
+    margin-bottom: 0.8rem;
+    margin-top: 0.8rem;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+  }
   .home-card {
-    max-width: 100vw;
-    min-height: 60vh;
-    padding: 0 0 0 2px;
-    border-bottom-right-radius: 10px;
-    border-top-right-radius: 10px;
+    width: 100%;
+    min-height: 16vh;
+    border-bottom-right-radius: 3px;
+    border-top-left-radius: 16px;
+    padding-top: 0.1rem;
+    padding-bottom: 0.1rem;
+    margin-top: 0;
+    margin-bottom: 0;
+  }
+  .home-card .row.align-items-center {
+    flex-direction: column !important;
+    align-items: center !important;
+  }
+  .home-card .col-md-6.text-center {
+    order: 1;
+  }
+  .home-card .col-md-6.text-center.text-md-start {
+    order: 2;
+    max-width: 600px;
+    width: 100%;
+    margin-left: auto;
+    margin-right: auto;
+    padding-left: 1.5rem;
+    padding-right: 1.5rem;
+    text-align: left !important;
+  }
+  .home-card .col-md-6.text-center.text-md-start .display-4,
+  .home-card .col-md-6.text-center.text-md-start .text-muted {
+    text-align: center !important;
+    width: 100%;
+    display: block;
   }
   .info-home {
-    width: 98vw;
-    font-size: 0.85rem;
-  }
-  .img-fluid.rounded-circle {
-    height: 80px;
-    max-width: 70vw;
-  }
-  .display-4 {
-    font-size: 1.1rem;
+    width: 100% !important;
   }
 }
 
 @media (max-width: 960px) {
   .img-fluid.rounded-circle {
-    width: 100%;
-    height: 100%;
+    width: 244px;
+    height: 244px;
     min-width: 120px;
+    max-width: 100%;
     margin-bottom: 1.5rem;
     margin-top: 1rem;
     display: block;
@@ -341,9 +382,11 @@
     width: 100%;
     display: block;
   }
+  .info-home {
+    width: 100% !important;
+  }
 }
 
-// Botones sociales en home-card (dentro de la tarjeta)
 .home-card .floating-contact-btn {
   width: 48px;
   height: 48px;

@@ -379,6 +379,10 @@ body {
     max-width: 98vw;
     padding: 0.5rem;
   }
+  .floating-contact {
+    bottom: 1px !important;
+    right: 10px;
+  }
 }
 @media (max-width: 600px) {
   .section, .section .container {
@@ -391,6 +395,10 @@ body {
   }
   .card-img-wrapper {
     height: 220px;
+  }
+  .floating-contact {
+    bottom: 6px;
+    right: 6px;
   }
 }
 @media (max-width: 400px) {
@@ -405,4 +413,12 @@ body {
   .card-img-wrapper {
     height: 140px;
   }
+  .floating-contact {
+    bottom: 2px;
+    right: 2px;
+  }
+}
+
+body, .container, .section {
+  min-width: 360px;
 }
