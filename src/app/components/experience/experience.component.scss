@@ -169,7 +169,7 @@ body, .container {
     border-radius: 8px;
   }
   .section-icon-box {
-    padding: 0.3rem 0.1rem;
+    padding: 0.5rem 0.5rem;
     border-radius: 8px 8px 0 0;
   }
   .skill-circle {
@@ -189,7 +189,7 @@ body, .container {
     border-radius: 4px;
   }
   .section-icon-box {
-    padding: 0.1rem 0.05rem;
+    padding: 0.5rem 0.5rem;
     border-radius: 4px 4px 0 0;
   }
   .skill-circle {
@@ -321,5 +321,14 @@ body, .container {
   }
   .section-title {
     width: 100%;
+  }
+}
+
+@media (max-width: 1100px) {
+  .section-skills {
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    gap: 1.2rem;
   }
 }
